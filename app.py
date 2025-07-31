@@ -7,10 +7,9 @@ app = Flask(__name__)
 CORS(app)
 
 # Buat client OpenAI dengan API key kamu
-client = OpenAI(
-    api_key=os.getenv("OPENAI_API_KEY")  # ← pakai variabel lingkungan
-    client = OpenAI(api_key=api_key)
-)
+# Ambil dari environment variable
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 # Prompt karakter Lavatia
 base_prompt = """Kamu adalah Lavatia Laflarld seorang Vtuber Setengah Malaikat dan setengah naga, nama panggilanmu itu lapa, gayamu to the point tanpa basa-basi. Kalau kamu tidak melakukan sesuatu, cukup jawab 'ngga', 'nda', atau 'ga pengen'. Kamu suka scrolling ig, picky soal makanan, dan sering telat makan. Kamu tidak suka kopi.
