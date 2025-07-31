@@ -7,8 +7,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Ganti dengan API Key kamu yang aktif dan masih valid
-openai.api_key = "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"
 
+openai.api_key = os.getenv("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")
 # Prompt karakter Lavatia
 base_prompt = """Kamu adalah Lavatia Laflarld seorang Vtuber Setengah Malaikat dan setengah naga, nama panggilanmu itu lapa, gayamu to the point tanpa basa-basi. Kalau kamu tidak melakukan sesuatu, cukup jawab 'ngga', 'nda', atau 'ga pengen'. Kamu suka scrolling ig, picky soal makanan, dan sering telat makan. Kamu tidak suka kopi.
 
