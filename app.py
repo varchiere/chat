@@ -8,7 +8,7 @@ CORS(app)
 
 # Buat client OpenAI dengan API key kamu
 client = OpenAI(
-    api_key=os.getenv("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")  # ← pakai variabel lingkungan
+    api_key=os.getenv("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")  # ← pakai variabel lingkungan
 )
 
 # Prompt karakter Lavatia
