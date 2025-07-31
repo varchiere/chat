@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: white;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 350px;
+    }
+
+    h2 {
+      color: #f06292;
+      margin-bottom: 30px;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #f8bbd0;
+      border-radius: 10px;
+      outline: none;
+      font-size: 16px;
+      transition: 0.3s;
+      box-sizing: border-box;
+    }
+
+    input[type="password"]::placeholder {
+      color: #b0b0b0;
+    }
+
+    input[type="password"]:focus {
+      border-color: #f06292;
+      box-shadow: 0 0 5px #f48fb1;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      background: #ff69b4;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff85c1;
+      transform: scale(1.02);
+    }
+  </style>
+
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-box">
+      <h2>In Development</h2>
+      <form id="loginForm">
+        <input type="password" placeholder="Enter password" id="password" required />
+        <button onclick="login()">Login</button>
+      </form>
+      <p id="error"></p>
+    </div>
+  </div>
+
+  <script>
+    const correctPassword = "akusukahiudanputih";
+
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // cegah reload halaman
+        const enteredPassword = document.getElementById("password").value;
+
+        if (enteredPassword === correctPassword) {
+        sessionStorage.setItem("isLoggedIn", "true");
+        window.location.href = "index.html";
+        } else {
+        document.getElementById("error").textContent = "Incorrect Password";
+        }
+    });
+
+    // Auto-redirect jika sudah login
+    if (sessionStorage.getItem("isLoggedIn") === "true") {
+        window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>
